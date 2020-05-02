@@ -128,7 +128,7 @@ wstring getSerialNumber(PCCERT_CONTEXT pCertContext)
 		wsprintfW(hex, _T("%02x"), pbName[i]);
 		theString.append(hex);
 	}
-	wcout << theString << endl;
+	//wcout << theString << endl;
 	//cin.get();
 	return theString;
 }
@@ -672,10 +672,8 @@ int _tmain(int argc, _TCHAR* argv[])
                 NULL,
                 CertEnumSystemStoreLocationCallback);
 
-	//scanf_s
-
 	wcout << "Finish!" << endl;
-	cin.get();
+	
 
     return 0;
 }
