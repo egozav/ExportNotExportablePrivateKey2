@@ -1,1 +1,18 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets(55,5): error MSB8020: The build tools for Visual Studio 2010 (Platform Toolset = 'v100') cannot be found. To build using the v100 build tools, please install Visual Studio 2010 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  exportrsa.cpp
+d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(230): warning C4477: 'fwprintf' : format string '%S' requires an argument of type 'char *', but variadic argument 1 has type 'LPWSTR'
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(230): note: consider using '%lS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(230): note: consider using '%llS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(230): note: consider using '%LS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(230): note: consider using '%wS' in the format string
+d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(270): warning C4477: 'fwprintf' : format string '%S' requires an argument of type 'char *', but variadic argument 1 has type 'LPWSTR'
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(270): note: consider using '%lS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(270): note: consider using '%llS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(270): note: consider using '%LS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(270): note: consider using '%wS' in the format string
+d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(293): warning C4477: 'fwprintf' : format string '%S' requires an argument of type 'char *', but variadic argument 1 has type 'LPWSTR'
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(293): note: consider using '%lS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(293): note: consider using '%llS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(293): note: consider using '%LS' in the format string
+  d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(293): note: consider using '%wS' in the format string
+d:\repos\luipir\exportnotexportableprivatekey\exportrsa\exportrsa\exportrsa.cpp(629): warning C4018: '<': signed/unsigned mismatch
+  exportrsa.vcxproj -> D:\Repos\luipir\ExportNotExportablePrivateKey\exportrsa\Debug\exportrsa.exe

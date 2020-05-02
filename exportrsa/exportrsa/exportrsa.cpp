@@ -123,11 +123,13 @@ wstring getSerialNumber(PCCERT_CONTEXT pCertContext)
 	wstring theString;
 	for (int i = pCertContext->pCertInfo->SerialNumber.cbData - 1; i >= 0; i--)
 	{
-		wchar_t hex[2];
-		wprintf(hex, _T("%02x"), pbName[i]);
+		wchar_t hex[3];
+
+		wsprintfW(hex, _T("%02x"), pbName[i]);
 		theString.append(hex);
 	}
-
+	wcout << theString << endl;
+	//cin.get();
 	return theString;
 }
 
@@ -225,7 +227,7 @@ CertEnumSystemStoreCallback(
 				szOID_RSA,
 				strlen(szOID_RSA)))
 			{
-				fwprintf(stderr, _T("Skip cert with NO rsa public key for \"%S\"\n"), dwCertName);
+				fwprintf(stderr, _T("Skip cert with NO rsa public key for <%S>\n"), dwCertName);
 				continue;
 			}
 
@@ -265,7 +267,7 @@ CertEnumSystemStoreCallback(
 				&dwKeySpec,
 				&fCallerFreeProvOrNCryptKey))
 			{
-				fwprintf(stderr, _T("Skip cert with NO private key handler for %S: %x\n"), dwCertName, GetLastError());
+				fwprintf(stderr, _T("Skip cert with NO private key handler for <%S>: %x\n"), dwCertName, GetLastError());
 				continue;
 			}
 
@@ -288,7 +290,7 @@ CertEnumSystemStoreCallback(
 					dwKeySpec,
 					&hKey))
 				{
-					fwprintf(stderr, _T("Cannot retrieve handle to the private key for %S\n"), dwCertName);
+					fwprintf(stderr, _T("Cannot retrieve handle to the private key for <%S>\n"), dwCertName);
 					continue;
 				}
 
@@ -314,7 +316,7 @@ CertEnumSystemStoreCallback(
 					if (response != 'Y' && response != 'y')
 					{
 						fprintf(stdout, "Cert will be NOT exported\n\n");
-						continue;
+						return TRUE;
 					}
 
 					// Mark the certificate's private key as exportable and archivable
@@ -338,7 +340,7 @@ CertEnumSystemStoreCallback(
 						NULL,
 						&cbData))
 					{
-						fprintf(stderr, "Not able to get private key lenght for cert:\n", GetLastError());
+						fprintf(stderr, "Not able to get private key lenght for cert:\n");
 						continue;
 					}
 				}
@@ -598,6 +600,7 @@ CertEnumSystemStoreCallback(
 
 			fprintf(stdout, "SUCCESSFULLY exported cert bundle in file\n");
 
+
 			return TRUE;
 		}
     }
@@ -647,10 +650,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	serial = removeSpaces(serial);
 
 	wcout << "Serial: " << serial.c_str() << endl;
-	cout << MAX_PATH << endl; 
+	//cout << MAX_PATH << endl; 
     // Initialize g_ulFileNumber
     
-	return 0;
+	
 
 
     // Determine if we're a 32-bit process running on a 64-bit OS
@@ -672,6 +675,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//scanf_s
 
 	wcout << "Finish!" << endl;
+	cin.get();
 
     return 0;
 }
